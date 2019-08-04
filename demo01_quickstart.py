@@ -2,7 +2,7 @@
 # @Time: 2019/8/3 20:52
 # @Author: yhw-miracle
 # @Email: yhw_software@qq.com
-# @File: demo01.py
+# @File: demo01_quickstart.py
 # @Software: PyCharm
 from tkinter import *
 
