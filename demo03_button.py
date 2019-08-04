@@ -15,6 +15,7 @@ class App(object):
     def __init__(self):
         self.root = Tk()
         self.root.title("button demo")
+        self.root.geometry("500x470")
 
         self.frame = Frame(master = self.root)
         self.frame.pack()
