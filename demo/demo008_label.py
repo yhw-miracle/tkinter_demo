@@ -2,7 +2,7 @@
 # @Time: 2019/8/4 21:27
 # @Author: yhw-miracle
 # @Email: yhw_software@qq.com
-# @File: dmeo08_label.py
+# @File: demo008_label.py
 # @Software: PyCharm
 from tkinter import *
 
