@@ -42,7 +42,7 @@ class NoteApp(object):
 
         # 文件子菜单
         file_menu = Menu(menubar, tearoff = 0)   # 去除菜单顶部分隔线
-        file_menu.add_command(label = "新建", command = lambda: print("新建文件..."))
+        file_menu.add_command(label = "新建", command = self.new_file)
         file_menu.add_command(label = "打开", command = self.open_file)
         file_menu.add_command(label = "保存", command = lambda : print("保存文件..."))
         file_menu.add_command(label = "另存为", command = lambda : print("另存为..."))
@@ -89,7 +89,7 @@ class NoteApp(object):
         toolbar_frame.config(bg = "#FF6A00")
         toolbar_frame.pack(side = TOP, fill = X)
 
-        new_file_button = Button(toolbar_frame, text = "新建", command = lambda : print("新建文件"))
+        new_file_button = Button(toolbar_frame, text = "新建", command = self.new_file)
         new_file_button.grid(row = 0, column = 0, padx = 5, pady = 5)
         open_file_button = Button(toolbar_frame, text = "打开", command = self.open_file)
         open_file_button.grid(row = 0, column = 1, padx = 5, pady = 5)
@@ -150,6 +150,15 @@ class NoteApp(object):
 
             with open(self.file_name, "r+", encoding = "utf-8") as file:
                 self.textarea.insert(1.0 , file.read())
+
+    def new_file(self):
+        """
+        新建文件
+        :return:
+        """
+        self.file_name = None
+        self.root.title("noting.md")
+        self.textarea.delete(1.0, END)
 
 
 if __name__ == '__main__':
