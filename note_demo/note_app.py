@@ -60,8 +60,8 @@ class NoteApp(object):
         edit_menu.add_command(label = "粘贴", command = self.paste)
         edit_menu.add_separator()
         edit_menu.add_command(label = "全选", command = self.select_all)
-        edit_menu.add_command(label = "查找", command = lambda : print("查找..."))
-        edit_menu.add_command(label = "替换", command = lambda : print("替换..."))
+        edit_menu.add_command(label = "查找", command = self.search)
+        edit_menu.add_command(label = "替换", command = self.replace)
         edit_menu.add_separator()
         # 编辑 ---> 添加子菜单
         edit_menu_add = Menu(edit_menu, tearoff = 0)
@@ -224,6 +224,27 @@ class NoteApp(object):
         :return:
         """
         self.textarea.tag_add("sel", 1.0, END)
+
+    def search(self):
+        """
+        查找操作
+        :return:
+        """
+        search_toplevel = Toplevel(self.root)
+        search_toplevel.geometry("300x50+250+250")
+        Label(search_toplevel, text = "find").grid(row = 0, column = 0, padx = 5)
+
+        search_content = Entry(search_toplevel, width = 20)
+        search_content.grid(row = 0, column = 1, padx = 5)
+
+        # search_content.bind("<Return>", self.textarea.tag_add("sel", 1.0, 2.0))
+
+    def replace(self):
+        """
+        替换操作
+        :return:
+        """
+        pass
 
 
 if __name__ == '__main__':
