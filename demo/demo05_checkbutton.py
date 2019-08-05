@@ -10,7 +10,7 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("checkbutton demo")
+        self.root.title("checkbutton demo_1")
         self.root.geometry("500x470")
 
         # 默认未选中

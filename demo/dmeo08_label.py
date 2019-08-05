@@ -10,10 +10,10 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("label demo")
+        self.root.title("label demo_1")
         self.root.geometry("500x470")
 
-        self.label = Label(self.root, text = "demo", anchor = W, bg = "#FF6A00", bd = 5)
+        self.label = Label(self.root, text = "demo_1", anchor = W, bg = "#FF6A00", bd = 5)
         self.label.config(cursor = "gumby", fg = "#987645")
         self.label.config(font = ("time", 14, "bold"))
         self.label.config(state = NORMAL, takefocus = True)

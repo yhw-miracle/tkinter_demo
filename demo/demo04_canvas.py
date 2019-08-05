@@ -10,7 +10,7 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("canvas demo")
+        self.root.title("canvas demo_1")
         self.root.geometry("500x470")
 
         self.canvas_demo = Canvas(self.root, width = 200, height = 100)

@@ -10,7 +10,7 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("frame demo")
+        self.root.title("frame demo_1")
         self.root.geometry("500x470")
 
         self.frame = Frame(master = self.root, width = 200, height = 100, bg = "#FF6A00", relief = SUNKEN, bd = 5)

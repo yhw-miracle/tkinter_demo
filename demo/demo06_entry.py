@@ -10,7 +10,7 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("entry demo")
+        self.root.title("entry demo_1")
         self.root.geometry("500x470")
 
         self.entry1 = Entry(self.root)

@@ -177,7 +177,7 @@ class NoteApp(object):
         另存为文件
         :return:
         """
-        self.file_name = asksaveasfilename(initialfile = "demo.md", defaultextension = ".md")
+        self.file_name = asksaveasfilename(initialfile = "demo_1.md", defaultextension = ".md")
         if self.file_name is not None:
             with open(self.file_name, "w") as file:
                 file.write(self.textarea.get(1.0, END))

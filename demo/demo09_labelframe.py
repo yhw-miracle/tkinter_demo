@@ -10,7 +10,7 @@ from tkinter import *
 class App(object):
     def __init__(self):
         self.root = Tk()
-        self.root.title("labelframe demo")
+        self.root.title("labelframe demo_1")
         self.root.geometry("500x470")
 
         self.group = LabelFrame(self.root, text = "group", padx = 5, pady = 5)
