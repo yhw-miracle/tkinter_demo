@@ -52,12 +52,12 @@ class NoteApp(object):
 
         # 编辑子菜单
         edit_menu = Menu(menubar, tearoff = 0)
-        edit_menu.add_command(label = "撤销", command = lambda : print("撤销..."))
-        edit_menu.add_command(label = "反撤销", command = lambda : print("反撤销..."))
+        edit_menu.add_command(label = "撤销", command = self.undo)
+        edit_menu.add_command(label = "反撤销", command = self.redo)
         edit_menu.add_separator()
-        edit_menu.add_command(label = "复制", command = lambda : print("复制..."))
-        edit_menu.add_command(label = "剪切", command = lambda : print("剪切..."))
-        edit_menu.add_command(label = "粘贴", command = lambda : print("粘贴..."))
+        edit_menu.add_command(label = "复制", command = self.copy)
+        edit_menu.add_command(label = "剪切", command = self.cut)
+        edit_menu.add_command(label = "粘贴", command = self.paste)
         edit_menu.add_separator()
         edit_menu.add_command(label = "全选", command = lambda : print("全选..."))
         edit_menu.add_command(label = "查找", command = lambda : print("查找..."))
@@ -182,6 +182,41 @@ class NoteApp(object):
             with open(self.file_name, "w") as file:
                 file.write(self.textarea.get(1.0, END))
             self.root.title(os.path.basename(self.file_name))
+
+    def undo(self):
+        """
+        撤销操作
+        :return:
+        """
+        self.textarea.event_generate("<<Undo>>")
+
+    def redo(self):
+        """
+        反撤销操作
+        :return:
+        """
+        self.textarea.event_generate("<<Redo>>")
+
+    def copy(self):
+        """
+        拷贝操作
+        :return:
+        """
+        self.textarea.event_generate("<<Copy>>")
+
+    def paste(self):
+        """
+        粘贴操作
+        :return:
+        """
+        self.textarea.event_generate("<<Paste>>")
+
+    def cut(self):
+        """
+        剪切操作
+        :return:
+        """
+        self.textarea.event_generate("<<Cut>>")
 
 
 if __name__ == '__main__':
