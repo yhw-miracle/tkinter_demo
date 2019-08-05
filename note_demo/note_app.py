@@ -59,7 +59,7 @@ class NoteApp(object):
         edit_menu.add_command(label = "剪切", command = self.cut)
         edit_menu.add_command(label = "粘贴", command = self.paste)
         edit_menu.add_separator()
-        edit_menu.add_command(label = "全选", command = lambda : print("全选..."))
+        edit_menu.add_command(label = "全选", command = self.select_all)
         edit_menu.add_command(label = "查找", command = lambda : print("查找..."))
         edit_menu.add_command(label = "替换", command = lambda : print("替换..."))
         edit_menu.add_separator()
@@ -217,6 +217,13 @@ class NoteApp(object):
         :return:
         """
         self.textarea.event_generate("<<Cut>>")
+
+    def select_all(self):
+        """
+        全选操作
+        :return:
+        """
+        self.textarea.tag_add("sel", 1.0, END)
 
 
 if __name__ == '__main__':
